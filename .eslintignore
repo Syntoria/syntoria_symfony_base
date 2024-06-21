@@ -1,0 +1,11 @@
+build/*
+dist/*
+public/*
+**/out/*
+**/node_modules/*
+
+**/.next/*
+next.config.js
+
+vite.config.js
+vite.config.ts
