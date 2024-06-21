@@ -1,3 +1,4 @@
+import { DashboardPage } from "@/pages/Dashboard";
 import { Suspense } from "react";
 import { Outlet, RouteObject } from "react-router-dom";
 
@@ -11,12 +12,7 @@ export const dashboardRoutes: RouteObject[] = [
         children: [
             {
                 index: true,
-                element: <div>
-                    <h1>This is dashboard!</h1>
-                    <p>
-                        Welcome to the dashboard!
-                    </p>
-                </div>
+                element: <DashboardPage />
             }
         ]
     }
