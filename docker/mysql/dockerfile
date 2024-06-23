@@ -1,0 +1,10 @@
+FROM mysql:latest
+
+# Set environment variables for MySQL
+ENV MYSQL_ROOT_PASSWORD=${DATABASE_R0OT_PASSWORD}
+ENV MYSQL_DATABASE=${DATABASE_NAME}
+ENV MYSQL_USER=${DATABASE_USER}
+ENV MYSQL_PASSWORD=${DATABASE_PASSWORD}
+
+# Expose MySQL port (internally for linked containers)
+EXPOSE 3306

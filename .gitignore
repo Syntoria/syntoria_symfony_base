@@ -11,6 +11,8 @@
 /node_modules/
 ###< symfony/framework-bundle ###
 
+/docker/mysql/data
+
 ###> phpunit/phpunit ###
 /phpunit.xml
 .phpunit.result.cache
