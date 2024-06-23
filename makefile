@@ -28,8 +28,16 @@ up: ## Start the Docker containers
 
 .PHONY: logs
 logs: ## Show the Docker containers logs
-	$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) logs -f
+	$(DOCKER_COMPOSE) --env-file $(ENV_FILE) -f $(DOCKER_COMPOSE_FILE) logs -f
 
 .PHONY: down
 down: ## Stop the Docker containers
-	$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) down
+	$(DOCKER_COMPOSE) --env-file $(ENV_FILE) -f $(DOCKER_COMPOSE_FILE) down
+
+.PHONY: php-bash
+php-bash: ## Open a bash shell in the PHP container
+	$(DOCKER_COMPOSE) --env-file $(ENV_FILE) -f $(DOCKER_COMPOSE_FILE) exec php bash
+
+.PHONY: php-transports
+php-transports: ## Run the transports command in the PHP container
+	$(DOCKER_COMPOSE) --env-file $(ENV_FILE) -f $(DOCKER_COMPOSE_FILE) run --rm php bash -c php bin/console messenger:setup-transports

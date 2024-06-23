@@ -40,3 +40,7 @@ RUN mkdir public/dist
 RUN if [ "$APP_ENV" = "dev" ] ; then \
     composer install --no-scripts && npm install && npm run dev:no-watch ; else \
     composer install --no-dev --no-scripts && npm install && npm run build ; fi
+
+RUN chmod +x start.sh
+
+CMD ["bash", "start.sh"]

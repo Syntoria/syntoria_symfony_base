@@ -24,7 +24,7 @@ const ROOT_PATH = __dirname;
 const CACHE_PATH = ROOT_PATH + "/temp/webpack";
 
 require('dotenv').config({
-    path: './docker/.env',
+    path: '.env.local',
 });
 
 module.exports = {
@@ -38,6 +38,7 @@ module.exports = {
         path: path.join(ROOT_PATH, "public/dist"),
         publicPath: "/dist/",
         filename: '[name].bundle.js',
+        clean: true,
     },
     devtool: 'cheap-module-source-map',
     cache: {
